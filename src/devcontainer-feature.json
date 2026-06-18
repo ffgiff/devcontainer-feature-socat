@@ -13,5 +13,6 @@
             "default": "",
             "proposals": ["9222 11434"]
         }
-    }
+    },
+    "entrypoint": "/opt/devcontainer-feature-socat/entrypoint.sh"
 }
