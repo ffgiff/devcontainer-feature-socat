@@ -1,9 +1,8 @@
 #!/bin/sh
 mkdir -p /opt/devcontainer-feature-socat
-cat > /opt/devcontainer-feature-socat/entrypoint.sh <<END
 for PORT in SOCAT_PORTS
 do
-    socat TCP-LISTEN:$PORT,fork,reuseaddr TCP:host.containers.internal:$PORT &
+    echo socat TCP-LISTEN:$PORT,fork,reuseaddr TCP:host.containers.internal:$PORT \& >> /opt/devcontainer-feature-socat/entrypoint.sh
 done
 END
 
