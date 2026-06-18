@@ -1,0 +1,17 @@
+{
+    "id": "socat",
+    "version": "1.0.0",
+    "name": "Host port forwarding",
+    "description": "Forward host ports with socat",
+    "dependsOn": {
+        "common-utils": {}
+    },
+    "options": {
+        "socat_ports": {
+            "type": "string",
+            "description": "Port numbers to forward, e.g. CDP, Ollama",
+            "default": "",
+            "proposals": ["9222 11434"]
+        }
+    }
+}
