@@ -1,0 +1,19 @@
+name: Release Artifacts
+on:
+    release:
+        types: [published]
+jobs:
+    tarballs:
+        runs-on: ubuntu-latest
+        permissions:
+            contents: write
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v6
+            - name: Package tarballs
+              run: |
+                for dir in src; do if [ -d ${dir} ]; then tar caf devcontainer-feature-socat.tgz -C ${dir} ./; fi; done
+                gh release upload ${GITHUB_REF_NAME} --clobber *.tgz
+              env:
+                GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                GH_REPO: ${{ github.repository }}
