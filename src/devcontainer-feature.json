@@ -4,7 +4,7 @@
     "name": "Host port forwarding",
     "description": "Forward host ports with socat",
     "dependsOn": {
-        "common-utils": {}
+        "ghcr.io/devcontainers/features/common-utils:2": {}
     },
     "options": {
         "socat_ports": {
